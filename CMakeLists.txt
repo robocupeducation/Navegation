@@ -24,3 +24,7 @@ include_directories(
 add_executable(visit_my_home_node src/visit_my_home.cpp)
 add_dependencies(visit_my_home_node ${catkin_EXPORTED_TARGETS} )
 target_link_libraries(visit_my_home_node ${catkin_LIBRARIES} )
+
+add_executable(mover_node src/mover.cpp)
+add_dependencies(mover_node ${catkin_EXPORTED_TARGETS} )
+target_link_libraries(mover_node ${catkin_LIBRARIES} )
