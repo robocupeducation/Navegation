@@ -5,10 +5,12 @@
 #include "geometry_msgs/PoseStamped.h"
 #include <string>
 #include "geometry_msgs/Twist.h"
+#include <bica/Component.h>
+
 
 const float Pi = 3.141595;
 
-class Turner
+class Turner:public bica::Component
 {
 private:
   ros::NodeHandle n;
@@ -33,17 +35,20 @@ public:
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "mover_publisher");
-  Turner turner;
+  if(isActive()){
+    
+    ros::init(argc, argv, "mover_publisher");
+    Turner turner;
 
-  ros::Rate loop_rate(10);
+    ros::Rate loop_rate(10);
 
-  while(ros::ok()){
+    while(ros::ok()){
 
-    turner.step();
-    ros::spinOnce();
-    loop_rate.sleep();
-
+      turner.step();
+      ros::spinOnce();
+      loop_rate.sleep();
+    }
   }
+
   return 0;
 }
