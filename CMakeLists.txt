@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8.3)
 project(navigation_robocup_edu)
 
 find_package(catkin REQUIRED COMPONENTS
+  bica
+  bica_msgs
   geometry_msgs
   roscpp
   rospy
