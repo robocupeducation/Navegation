@@ -50,11 +50,14 @@ class Navigator
         ROS_INFO("Waiting for the move_base action server to come up");
       }
       //GrannieAnnie MAIN POSSITION POINTS
-      addNewPoint(1.24, 5.52);  //BEDROOM
-      addNewPoint(4.74, 3.77);  //KITCHEN
-      addNewPoint(0.837, 2.31); //ROOM
-      addNewPoint(7.43, 3.47);  //DINNING ROOM
-      addNewPoint(4.38, 1.73);  //LIVING ROOM
+      
+      addNewPoint(0.73, 2.35);   //ROOM
+      addNewPoint(3.11, 1.33);   //BEDROOM
+      addNewPoint(0.95, -1.44);  //KITCHEN
+
+      //addNewPoint(0.837, 2.31); //ROOM
+      //addNewPoint(7.43, 3.47);  //DINNING ROOM
+      //addNewPoint(4.38, 1.73);  //LIVING ROOM
       goal_cont = 0;
     }
 
