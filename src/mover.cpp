@@ -25,9 +25,11 @@ public:
 
   void step()
   {
-    geometry_msgs::Twist vel;
-    vel.angular.z = Pi / 4.0;
-    num_pub.publish(vel);
+    if(isActive()){
+      geometry_msgs::Twist vel;
+      vel.angular.z = Pi / 4.0;
+      num_pub.publish(vel);
+    }
   }
 
 };
@@ -35,8 +37,8 @@ public:
 
 int main(int argc, char** argv)
 {
-  if(isActive()){
-    
+
+
     ros::init(argc, argv, "mover_publisher");
     Turner turner;
 
@@ -48,7 +50,6 @@ int main(int argc, char** argv)
       ros::spinOnce();
       loop_rate.sleep();
     }
-  }
 
   return 0;
 }
